@@ -1,0 +1,94 @@
+.wrapper {
+  position: absolute;
+  display: block;
+  width: 64px;
+  height: 64px;
+  transition: all ease .2s;
+}
+
+.body {
+  z-index: 2;
+  position: absolute;
+  display: block;
+  width: 64px;
+  height: 64px;
+  background-position: 0 0;
+}
+
+.shadow {
+  z-index: 1;
+  top: 15px;
+  position: absolute;
+  display: block;
+  width: 64px;
+  height: 64px;
+  background-image: url('../../assests/battleship_shadow.png');
+}
+
+.body:hover {
+  cursor: pointer;
+}
+
+.flyleft {
+  animation: flyleft .4s steps(2, start) forwards;
+}
+
+.flyright {
+  animation: flyright .4s steps(2, start) forwards;
+}
+
+.blue {
+  background-image: url('../../assests/battleship_blue.png');
+}
+
+.red {
+  background-image: url('../../assests/battleship_red.png');
+}
+
+.exhaust {
+  z-index: 2;
+  position: absolute;
+  bottom: -20px;
+  display: block;
+  width: 23px;
+  height: 31px;
+  background-position: 0 0;
+  background-image: url('../../assests/exhaust.png');
+}
+
+.exhaustleft {
+  left: 17px;
+  animation: exhaustanimation 1s steps(5, start) infinite;
+}
+
+.exhaustright {
+  right: 17px;
+  animation: exhaustanimation 1.2s steps(5, start) infinite;
+}
+
+@keyframes flyleft {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -128px 0;
+  }
+}
+
+@keyframes flyright {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -256px 0;
+  }
+}
+
+@keyframes exhaustanimation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -115px 0;
+  }
+}
