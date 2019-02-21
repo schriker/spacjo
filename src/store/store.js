@@ -67,6 +67,30 @@ export const reducer = (state, action) => {
         }
       }
     }
+    case actionTypes.MOVE_LEFT: {
+      return {
+        ...state, 
+        game: {
+          ...state.game, 
+          playerPosition: {
+            ...state.game.playerPosition,
+            x: state.game.playerPosition.x - 15
+          } 
+        }
+      }
+    }
+    case actionTypes.MOVE_RIGHT: {
+      return {
+        ...state, 
+        game: {
+          ...state.game, 
+          playerPosition: {
+            ...state.game.playerPosition,
+            x: state.game.playerPosition.x + 15
+          } 
+        }
+      }
+    }
     default: return state
   }
 }

@@ -6,11 +6,12 @@ const Battleship = (props) => {
   const position = {
     left: props.x + 'px',
     top: props.y + 'px',
-    transition: `all ease ${props.animationTime}ms`
+    transition: props.flyingLeft || props.flyingRight ? `100ms` : `all ease ${props.animationTime}ms`
   }
 
   let withExhaust = null
   let shadow = null
+  let flyingAnimation = props.flyingRight ? styles.flyright : props.flyingLeft ? styles.flyleft : null
 
   if (props.selected) {
     withExhaust = 
@@ -25,7 +26,7 @@ const Battleship = (props) => {
 
   return (
     <div style={position} className={styles.wrapper}>
-      <div className={`${styles.body} ${styles[props.color]}`}></div>
+      <div className={`${styles.body} ${styles[props.color]} ${flyingAnimation}`}></div>
       {withExhaust}
       {shadow}
     </div>

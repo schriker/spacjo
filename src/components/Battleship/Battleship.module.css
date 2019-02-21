@@ -3,7 +3,6 @@
   display: block;
   width: 64px;
   height: 64px;
-  transition: all ease .2s;
   top: -200px;
 }
 
@@ -31,11 +30,11 @@
 }
 
 .flyleft {
-  animation: flyleft .4s steps(2, start) forwards;
+  animation: flyleft .5s steps(2, start) forwards;
 }
 
 .flyright {
-  animation: flyright .4s steps(2, start) forwards;
+  animation: flyright .5s steps(2, start) forwards;
 }
 
 .blue {
@@ -78,7 +77,7 @@
 
 @keyframes flyright {
   from {
-    background-position: 0 0;
+    background-position: -128px 0;
   }
   to {
     background-position: -256px 0;

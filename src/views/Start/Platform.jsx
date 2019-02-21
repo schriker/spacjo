@@ -17,6 +17,7 @@ const Platform = (props) => {
               return (
                 <div key={index} onClick={() => store.dispatch({ type: actionTypes.SET_BATTLESHIP, selectedShip: ship })}>
                   <Battleship 
+                    animationTime={200}
                     x={index === 0 ? "105" : "200"} 
                     y={isSelected ? "40" : "60"} 
                     color={ship} 
