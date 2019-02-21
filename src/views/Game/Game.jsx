@@ -8,6 +8,8 @@ const Game = (props) => {
   const store = useContext(StateContext)
   const [flyingLeft, setFlyingLeft] = useState(false)
   const [flyingRight, setFlyingRight] = useState(false)
+
+  // Tutaj dostaje zaktualizowany obkeit za kazdym razem.
   console.log(store.state.game.playerPosition)
 
   useEffect(() => {
@@ -35,6 +37,7 @@ const Game = (props) => {
   
   const handleMove = (e) => {
 
+    // W tym miejscu dostaje poczatkowy stan cały czas.
     console.log(store.state.game.playerPosition)
 
     if (e.keyCode === 39) {
