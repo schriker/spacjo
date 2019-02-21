@@ -8,8 +8,8 @@ const Game = (props) => {
   const store = useContext(StateContext)
   const [flyingLeft, setFlyingLeft] = useState(false)
   const [flyingRight, setFlyingRight] = useState(false)
+  console.log(store.state.game.playerPosition)
 
-  
   useEffect(() => {
     window.addEventListener('keydown', handleMove)
     window.addEventListener('keyup', handleStop)
@@ -34,16 +34,23 @@ const Game = (props) => {
   }, [])
   
   const handleMove = (e) => {
+
+    console.log(store.state.game.playerPosition)
+
     if (e.keyCode === 39) {
-      store.dispatch({type: actionTypes.MOVE_RIGHT})  
-      setFlyingRight(true)
-      setFlyingLeft(false)
+      store.dispatch({type: actionTypes.MOVE_RIGHT})
+      if (!flyingRight) {
+        setFlyingRight(true)
+        setFlyingLeft(false)
+      }
     }
 
     if (e.keyCode === 37) {
       store.dispatch({type: actionTypes.MOVE_LEFT})
-      setFlyingRight(false)
-      setFlyingLeft(true)
+      if (!flyingLeft) {
+        setFlyingRight(false)
+        setFlyingLeft(true)
+      }
     }
   }
 
