@@ -1,22 +1,33 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react'
+import styles from './Layout.module.css'
 
-import Start from '../../views/Start/Start';
-import { StateContext } from '../../store/store';
+import Start from '../../views/Start/Start'
+import Stats from '../Stats/Stats'
+import Game from '../../views/Game/Game'
+import { StateContext } from '../../store/store'
 
 const Layout = () => {
 
-  const store = useContext(StateContext);
-  let content = null;
+  const store = useContext(StateContext)
+
+  const gameArena = useRef(null)
+
+  let content = null
 
   if (!store.state.game.isStarted) {
     content = <Start />
   }
 
   if (store.state.game.isStarted) {
-      content = <div>Test</div>
+      content = <Game arena={gameArena} />
   }
 
-  return (content);
-};
+  return (
+      <div ref={gameArena} className={styles.wrapper}>
+        <Stats />
+        {content}
+      </div>
+  )
+}
 
-export default Layout;
+export default Layout

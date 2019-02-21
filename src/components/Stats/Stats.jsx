@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
-import styles from './Stats.module.css';
-import heart from '../../assests/heart_icon.png';
-import { StateContext } from '../../store/store';
+import React, { useContext } from 'react'
+import styles from './Stats.module.css'
+import heart from '../../assests/heart_icon.png'
+import { StateContext } from '../../store/store'
 
 const Stats = () => {
 
@@ -14,7 +14,7 @@ const Stats = () => {
       </ul>
       <div>SCORE: {store.state.player.score}</div>
     </div>
-  );
-};
+  )
+}
 
-export default Stats;
+export default Stats

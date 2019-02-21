@@ -1,4 +1,6 @@
-export const SET_USERNAME = 'SET_USERNAME';
-export const SET_BATTLESHIP = 'SET_BATTLESHIP';
+export const SET_USERNAME = 'SET_USERNAME'
+export const SET_BATTLESHIP = 'SET_BATTLESHIP'
 
-export const START_GAME = 'START_GAME';
+export const START_GAME = 'START_GAME'
+
+export const INIT_GAME = 'INIT_GAME'

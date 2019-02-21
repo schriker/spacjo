@@ -4,6 +4,7 @@
   width: 64px;
   height: 64px;
   transition: all ease .2s;
+  top: -200px;
 }
 
 .body {

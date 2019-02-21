@@ -1,15 +1,16 @@
-import React from 'react';
-import styles from './Battleship.module.css';
+import React from 'react'
+import styles from './Battleship.module.css'
 
 const Battleship = (props) => {
 
   const position = {
     left: props.x + 'px',
-    top: props.y + 'px'
+    top: props.y + 'px',
+    transition: `all ease ${props.animationTime}ms`
   }
 
-  let withExhaust = null;
-  let shadow = null;
+  let withExhaust = null
+  let shadow = null
 
   if (props.selected) {
     withExhaust = 
@@ -28,7 +29,7 @@ const Battleship = (props) => {
       {withExhaust}
       {shadow}
     </div>
-  );
-};
+  )
+}
 
-export default Battleship;
+export default Battleship
