@@ -74,7 +74,7 @@ export const reducer = (state, action) => {
           ...state.game, 
           playerPosition: {
             ...state.game.playerPosition,
-            x: state.game.playerPosition.x - 15
+            x: state.game.playerPosition.x - 20
           } 
         }
       }
@@ -86,7 +86,7 @@ export const reducer = (state, action) => {
           ...state.game, 
           playerPosition: {
             ...state.game.playerPosition,
-            x: state.game.playerPosition.x + 15
+            x: state.game.playerPosition.x + 20
           } 
         }
       }
