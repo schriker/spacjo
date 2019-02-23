@@ -30,11 +30,11 @@
 }
 
 .flyleft {
-  animation: flyleft .3s steps(2, start) forwards;
+  animation: flyleft .5s steps(2, start) forwards;
 }
 
 .flyright {
-  animation: flyright .3s steps(2, start) forwards;
+  animation: flyright .5s steps(2, start) forwards;
 }
 
 .blue {

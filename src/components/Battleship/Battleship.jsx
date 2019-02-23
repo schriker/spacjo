@@ -6,7 +6,7 @@ const Battleship = (props) => {
   const position = {
     left: props.x + 'px',
     top: props.y + 'px',
-    transition: props.flyingLeft || props.flyingRight ? `50ms` : `all ease ${props.animationTime}ms`
+    transition: `all ease ${props.animationTime}ms`
   }
 
   let withExhaust = null
