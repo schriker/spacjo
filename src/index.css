@@ -25,6 +25,7 @@ body {
   background: #2e3440 url('./assests/bg.jpg') repeat-y;
   background-position: top center;
   /* animation: bg-animation 30s linear infinite; */
+  user-select: none;
   background-size: cover;
 }
 

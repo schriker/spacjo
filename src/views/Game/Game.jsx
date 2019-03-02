@@ -9,7 +9,6 @@ const Game = (props) => {
   const [starting, setStarting] = useState(true)
   const [flyingLeft, setFlyingLeft] = useState(false)
   const [flyingRight, setFlyingRight] = useState(false)
-  const [keyFired, setKeyFired] = useState(false)
 
   useEffect(() => {
     if (store.state.game.isStarted) {
@@ -35,13 +34,6 @@ const Game = (props) => {
 
   useEffect(() => {
     const handleMove = (e) => {
-
-      if (e.keyCode === 32) {
-        if (!keyFired)
-        console.log('shoots')
-        setKeyFired(true)
-      }
-
       if (e.keyCode === 39 && store.state.game.playerPosition.x + 84 < store.state.game.arenaWidth) {
         store.dispatch({type: actionTypes.MOVE_RIGHT})
         if (!flyingRight) {
@@ -66,19 +58,21 @@ const Game = (props) => {
     const handleStop = (e) => {
       setFlyingRight(false)
       setFlyingLeft(false)
-
-      if (e && e.keyCode === 32) {
-        setKeyFired(false)
-      }
-    }    
+    }
+    
+    const handleShoot = () => {
+      console.log('Test2')
+    }
 
     window.addEventListener('keydown', handleMove)
     window.addEventListener('keyup', handleStop)
+    window.addEventListener('click', handleShoot)
     return () => {
       window.removeEventListener('keydown', handleMove)
       window.removeEventListener('keyup', handleStop)
+      window.removeEventListener('click', handleShoot)
     }
-  }, [flyingLeft, flyingRight, store, keyFired])
+  }, [flyingLeft, flyingRight, store])
 
   return (
       <React.Fragment>
