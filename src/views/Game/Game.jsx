@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react'
 import { StateContext } from '../../store/store'
 import Battleship from '../../components/Battleship/Battleship'
+import Bullets from '../../components/Bullets/Bullets'
 import * as actionTypes from '../../store/actionTypes'
 
 const Game = (props) => {
@@ -76,9 +77,10 @@ const Game = (props) => {
 
   return (
       <React.Fragment>
+        <Bullets type='laser' />
         <Battleship 
           color={store.state.player.selectedShip}
-          animationTime = {starting ? 1200 : 50}
+          animationTime = {starting ? 900 : 100}
           flyingLeft = {flyingLeft}
           flyingRight = {flyingRight}
           x={store.state.game.playerPosition.x === 0 ? null : store.state.game.playerPosition.x}

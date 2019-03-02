@@ -15,7 +15,8 @@ export const initialState = {
     playerPosition: {
       x: 0,
       y: 0
-    }
+    },
+    userBullets: []
   }
 }
 

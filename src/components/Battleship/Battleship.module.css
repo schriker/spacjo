@@ -58,12 +58,12 @@
 
 .exhaustleft {
   left: 17px;
-  animation: exhaustanimation 1s steps(5, start) infinite;
+  animation: exhaustanimation 1s steps(6, start) infinite;
 }
 
 .exhaustright {
   right: 17px;
-  animation: exhaustanimation 1.2s steps(5, start) infinite;
+  animation: exhaustanimation 1.2s steps(6, start) infinite;
 }
 
 @keyframes flyleft {
@@ -89,6 +89,6 @@
     background-position: 0 0;
   }
   to {
-    background-position: -115px 0;
+    background-position: -138px 0;
   }
 }

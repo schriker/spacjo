@@ -1,0 +1,32 @@
+.body {
+  left: 0;
+  top: 0;
+  z-index: 2;
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 28px;
+  background-position: 0 0;
+  animation: bullet-animation .5s steps(3, start) forwards
+}
+
+.laser {
+  background-image: url('../../assests/laser_bullet.png')
+}
+
+.minigun {
+  background-image: url('../../assests/minigun_bullet.png')
+}
+
+.plasma {
+  background-image: url('../../assests/plasma_bullet.png')
+}
+
+@keyframes bullet-animation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -24px 0;
+  }
+}
