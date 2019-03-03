@@ -7,19 +7,20 @@
   width: 8px;
   height: 28px;
   background-position: 0 0;
-  animation: bullet-animation .5s steps(3, start) forwards
+  /* transition: all linear .5s; */
+  animation: bullet-animation .5s steps(3, start) forwards;
 }
 
 .laser {
-  background-image: url('../../assests/laser_bullet.png')
+  background-image: url('../../assests/laser_bullet.png');
 }
 
 .minigun {
-  background-image: url('../../assests/minigun_bullet.png')
+  background-image: url('../../assests/minigun_bullet.png');
 }
 
 .plasma {
-  background-image: url('../../assests/plasma_bullet.png')
+  background-image: url('../../assests/plasma_bullet.png');
 }
 
 @keyframes bullet-animation {

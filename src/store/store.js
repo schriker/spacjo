@@ -5,6 +5,7 @@ export const initialState = {
   player: {
     lives: 4,
     score: 0,
+    gun: 'laser',
     userName: 'Player name',
     selectedShip: 'blue'
   },
@@ -16,7 +17,7 @@ export const initialState = {
       x: 0,
       y: 0
     },
-    userBullets: []
+    playerBullets: []
   }
 }
 
@@ -75,7 +76,7 @@ export const reducer = (state, action) => {
           ...state.game, 
           playerPosition: {
             ...state.game.playerPosition,
-            x: state.game.playerPosition.x - 20
+            x: state.game.playerPosition.x - 10
           } 
         }
       }
@@ -87,8 +88,56 @@ export const reducer = (state, action) => {
           ...state.game, 
           playerPosition: {
             ...state.game.playerPosition,
-            x: state.game.playerPosition.x + 20
+            x: state.game.playerPosition.x + 10
           } 
+        }
+      }
+    }
+    case actionTypes.BULLET_CREATE: {
+      return {
+        ...state,
+        game: {
+          ...state.game,
+          playerBullets: [
+            ...state.game.playerBullets,
+            action.payload
+          ]
+        }
+      }
+    }
+    case actionTypes.BULLET_MOVE: {
+      const updatedArr = state.game.playerBullets.map((item, index) => {
+        if (index === action.payload.index) {
+          return {
+            ...action.payload.bullet
+          }
+        }
+        else {
+          return item
+        }
+      })
+      return {
+        ...state,
+        game: {
+          ...state.game,
+          playerBullets: [
+            ...updatedArr
+          ]
+        }
+      }
+    }
+    case actionTypes.BULLET_REMOVE: {
+      const updatedArr = state.game.playerBullets.filter((item, index) => {
+        return index !== action.index
+      })
+      console.log(updatedArr)
+      return {
+        ...state,
+        game: {
+          ...state.game,
+          playerBullets: [
+            ...updatedArr
+          ]
         }
       }
     }
