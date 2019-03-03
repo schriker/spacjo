@@ -7,7 +7,7 @@
   width: 8px;
   height: 28px;
   background-position: 0 0;
-  /* transition: all linear .5s; */
+  /* transition: all linear 10ms; */
   animation: bullet-animation .5s steps(3, start) forwards;
 }
 

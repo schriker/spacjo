@@ -21,9 +21,6 @@ const Bullets = (props) => {
       if (props.y > -28) {
         store.dispatch({type: actionTypes.BULLET_MOVE, payload})
       }
-      else if (props.y < -28) {
-        store.dispatch({type: actionTypes.BULLET_REMOVE, index: props.index})
-      }
   }, [store])
 
   const style = {
@@ -31,9 +28,13 @@ const Bullets = (props) => {
     top: props.y + 'px'
   }
 
-  return (
-    <div style={style} className={`${styles.body} ${styles[props.type]}`}></div>
-  )
+  let bullet = null
+
+  if (props.y > -28) {
+    bullet = <div style={style} className={`${styles.body} ${styles[props.type]}`}></div>
+  }
+
+  return bullet
 }
 
 export default Bullets
