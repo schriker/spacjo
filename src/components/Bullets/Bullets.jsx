@@ -16,7 +16,7 @@ const Bullets = (props) => {
       duration: 1000,
       easing: 'linear',
       change() {
-        // const rect = element.current.getBoundingClientRect()
+        const rect = element.current.getBoundingClientRect()
       },
       complete(anim) {
         if (anim.completed) {

@@ -126,21 +126,6 @@ export const reducer = (state, action) => {
         }
       }
     }
-    case actionTypes.BULLET_REMOVE: {
-      const updatedArr = state.game.playerBullets.filter((item, index) => {
-        return index !== action.index
-      })
-      console.log(updatedArr)
-      return {
-        ...state,
-        game: {
-          ...state.game,
-          playerBullets: [
-            ...updatedArr
-          ]
-        }
-      }
-    }
     default: return state
   }
 }
