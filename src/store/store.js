@@ -18,7 +18,16 @@ export const initialState = {
       y: 0
     },
     playerBullets: []
-  }
+  },
+  enemies: [
+    {
+      type: 'asteroid',
+      x: 250,
+      y: 50,
+      width: 39,
+      height: 37
+    }
+  ]
 }
 
 export const reducer = (state, action) => {

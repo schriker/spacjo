@@ -1,0 +1,39 @@
+.body {
+  position: absolute;
+  display: block;
+  animation: rotate 3s linear infinite;
+  z-index: 3;
+}
+
+.type1 {
+  background-image: url('../../assests/enemies/asteroid_1.png');
+  width: 39px;
+  height: 37px;
+}
+
+.type2 {
+  background-image: url('../../assests/enemies/asteroid_2.png');
+  width: 26px;
+  height: 26px;
+}
+
+.type3 {
+  background-image: url('../../assests/enemies/asteroid_3.png');
+  width: 37px;
+  height: 36px;
+}
+
+.type4 {
+  background-image: url('../../assests/enemies/asteroid_4.png');
+  width: 44px;
+  height: 35px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);    
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -7,7 +7,7 @@
 }
 
 .body {
-  z-index: 2;
+  z-index: 3;
   position: absolute;
   display: block;
   width: 64px;

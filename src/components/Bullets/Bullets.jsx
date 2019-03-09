@@ -13,10 +13,17 @@ const Bullets = (props) => {
     anime({
       targets: element.current,
       translateY: -store.state.game.arenaHeight,
-      duration: 1000,
+      duration: 1500,
       easing: 'linear',
       change() {
-        const rect = element.current.getBoundingClientRect()
+        const enemie = store.state.enemies[0]
+        const bullet = element.current.getBoundingClientRect()
+        if (bullet.x < enemie.x + 30 + enemie.width &&
+          bullet.x + bullet.width > enemie.x + 30 &&
+          bullet.y < enemie.y + enemie.height &&
+          bullet.height + bullet.y > enemie.y) {
+            console.log('Trafiony!')
+       }
       },
       complete(anim) {
         if (anim.completed) {
