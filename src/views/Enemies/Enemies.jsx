@@ -15,6 +15,7 @@ const Enemies = () => {
             index={index} 
             x={enemie.x} 
             y={enemie.y} 
+            elementHeight={enemie.height}
             type={'type1'}
           />  
           )

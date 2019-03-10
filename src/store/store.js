@@ -23,7 +23,7 @@ export const initialState = {
     {
       type: 'asteroid',
       x: 250,
-      y: 50,
+      y: -37,
       width: 39,
       height: 37
     }

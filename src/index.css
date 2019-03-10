@@ -27,6 +27,7 @@ body {
   /* animation: bg-animation 30s linear infinite; */
   user-select: none;
   background-size: cover;
+  overflow: hidden;
 }
 
 img {

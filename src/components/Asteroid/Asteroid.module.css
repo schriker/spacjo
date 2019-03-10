@@ -1,7 +1,6 @@
 .body {
   position: absolute;
   display: block;
-  animation: rotate 3s linear infinite;
   z-index: 3;
 }
 
@@ -27,13 +26,4 @@
   background-image: url('../../assests/enemies/asteroid_4.png');
   width: 44px;
   height: 35px;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);    
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
