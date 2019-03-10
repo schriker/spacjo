@@ -54,15 +54,15 @@ const Enemies = () => {
 
   return (
     <React.Fragment>
-      {store.state.enemies.map((enemie, index) => {
+      {store.state.enemies.map((enemy, index) => {
         return (
           <Asteroid 
             key={index}
             index={index} 
-            x={enemie.x} 
-            y={enemie.y} 
-            elementHeight={enemie.height}
-            type={enemie.style}
+            x={enemy.x} 
+            y={enemy.y} 
+            elementHeight={enemy.height}
+            type={enemy.style}
           />  
           )
         })

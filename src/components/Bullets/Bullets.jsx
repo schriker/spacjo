@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useRef } from 'react'
 import { StateContext } from '../../store/store'
 import styles from './Bullets.module.css'
 import anime from 'animejs'
+import collisionCheck from '../../utility/collisionCheck'
 import * as actionTypes from '../../store/actionTypes'
 
 const Bullets = (props) => {
@@ -16,14 +17,13 @@ const Bullets = (props) => {
       duration: 1500,
       easing: 'linear',
       change() {
-        const enemie = store.state.enemies[0]
+        const enemy = store.state.enemies[0]
         const bullet = element.current.getBoundingClientRect()
-        if (bullet.x < enemie.x + 30 + enemie.width &&
-          bullet.x + bullet.width > enemie.x + 30 &&
-          bullet.y < enemie.y + enemie.height &&
-          bullet.height + bullet.y > enemie.y) {
-            console.log('Trafiony!')
-       }
+        const collision = collisionCheck(bullet, enemy)
+        if (collision) {
+          console.log('trafion!')
+        }
+
       },
       complete(anim) {
         if (anim.completed) {
