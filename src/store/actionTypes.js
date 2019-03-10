@@ -10,3 +10,5 @@ export const MOVE_RIGHT = 'MOVE_RIGHT'
 
 export const BULLET_CREATE = 'BULLET_CREATE'
 export const BULLET_MOVE = 'BULLET_MOVE'
+
+export const ENEMY_ADD = 'ENEMY_ADD'

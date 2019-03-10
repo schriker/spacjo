@@ -22,6 +22,7 @@ export const initialState = {
   enemies: [
     {
       type: 'asteroid',
+      style: 1,
       x: 250,
       y: -37,
       width: 39,
@@ -133,6 +134,15 @@ export const reducer = (state, action) => {
             ...updatedArr
           ]
         }
+      }
+    }
+    case actionTypes.ENEMY_ADD: {
+      return {
+        ...state,
+        enemies: [
+          ...state.enemies,
+          action.payload
+        ]
       }
     }
     default: return state

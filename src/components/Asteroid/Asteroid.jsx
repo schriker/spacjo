@@ -14,10 +14,15 @@ const Asteroid = (props) => {
         targets: element.current,
         translateY: store.state.game.arenaHeight + props.elementHeight,
         rotate: 360,
-        duration: 3000,
+        duration: 5000,
         easing: 'linear',
         change() {
-          console.log('test')
+          console.log('Update asteroid position')
+        },
+        complete(anim) {
+          if(anim.completed) {
+            console.log('Remove asteroid from enemies array')
+          }
         }
       })
     }
@@ -28,11 +33,29 @@ const Asteroid = (props) => {
     top: props.y + 'px'
   }
 
+  let type = 'type1'
+
+  switch(props.type) {
+    case 1: 
+      type = 'type1'
+      break
+    case 2:
+      type = 'type2'
+      break
+    case 3:
+      type = 'type3'
+      break
+    case 4:
+      type = 'type4'
+      break
+    default: type = 'type1'
+  }
+
   return (
     <div
       ref={element} 
       style={position}
-      className={`${styles.body} ${styles[props.type]}`}>  
+      className={`${styles.body} ${styles[type]}`}>  
     </div>
   )
 }
