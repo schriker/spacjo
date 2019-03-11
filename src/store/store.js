@@ -19,16 +19,7 @@ export const initialState = {
     },
     playerBullets: []
   },
-  enemies: [
-    {
-      type: 'asteroid',
-      style: 1,
-      x: 250,
-      y: -37,
-      width: 39,
-      height: 37
-    }
-  ]
+  enemies: []
 }
 
 export const reducer = (state, action) => {
@@ -115,17 +106,8 @@ export const reducer = (state, action) => {
         }
       }
     }
-    case actionTypes.BULLET_MOVE: {
-      const updatedArr = state.game.playerBullets.map((item, index) => {
-        if (index === action.payload.index) {
-          return {
-            ...action.payload.bullet
-          }
-        }
-        else {
-          return item
-        }
-      })
+    case actionTypes.BULLET_REMOVE: {
+      const updatedArr = state.game.playerBullets.filter(bullet => bullet.id !== action.id)
       return {
         ...state,
         game: {
@@ -142,6 +124,15 @@ export const reducer = (state, action) => {
         enemies: [
           ...state.enemies,
           action.payload
+        ]
+      }
+    }
+    case actionTypes.ENEMY_REMOVE: {
+      const updatedArr = state.enemies.filter(enemy => enemy.id !== action.id)
+      return {
+        ...state,
+        enemies: [
+          ...updatedArr
         ]
       }
     }

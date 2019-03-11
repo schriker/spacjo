@@ -3,6 +3,7 @@ import { StateContext } from '../../store/store'
 import Battleship from '../../components/Battleship/Battleship'
 import Bullets from '../../components/Bullets/Bullets'
 import Enemies from '../Enemies/Enemies'
+import generateID from '../../utility/generateID'
 import * as actionTypes from '../../store/actionTypes'
 
 const Game = (props) => {
@@ -63,7 +64,9 @@ const Game = (props) => {
     }
     
     const handleShoot = () => {
+
       const payload = {
+        id: generateID(),
         type: store.state.player.gun,
         position: {
           x: store.state.game.playerPosition.x + 28,
@@ -86,10 +89,10 @@ const Game = (props) => {
   return (
       <React.Fragment>
         <Enemies />
-        {store.state.game.playerBullets.map((bullet, index) => 
+        {store.state.game.playerBullets.map((bullet) => 
           <Bullets 
-            key={index}
-            index={index}
+            key={bullet.id}
+            id={bullet.id}
             type={bullet.type} 
             x={bullet.position.x} 
             y={bullet.position.y}
