@@ -12,7 +12,7 @@ const Enemies = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       const style = random(1,4)
-      const x = random(0, store.state.game.arenaHeight)
+      const x = random(100, store.state.game.arenaWidth - 70)
       let elementHeight = 0
       let elementWidth = 0
 
@@ -43,6 +43,7 @@ const Enemies = () => {
         type: 'asteroid',
         style: style,
         x: x,
+        cords: null,
         y: -elementHeight,
         width: elementWidth,
         height: elementHeight

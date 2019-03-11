@@ -13,3 +13,4 @@ export const BULLET_REMOVE = 'BULLET_REMOVE'
 
 export const ENEMY_ADD = 'ENEMY_ADD'
 export const ENEMY_REMOVE = 'ENEMY_REMOVE'
+export const ENEMY_CORDS = 'ENEMY_CORDS'

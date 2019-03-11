@@ -17,14 +17,17 @@ const Bullets = (props) => {
       duration: 1500,
       easing: 'linear',
       change() {
-        if (store.state.enemies.length > 0) {
-          const enemy = store.state.enemies[0]
-          const bullet = element.current.getBoundingClientRect()
-          const collision = collisionCheck(bullet, enemy)
-          if (collision) {
-            console.log('trafion!')
-          }
-        }
+        // if (store.state.enemies.length > 0) {
+        //   for (let enemy of store.state.enemies) {
+        //     if (enemy.cords !== null) {
+        //       const bullet = element.current.getBoundingClientRect()
+        //       const collision = collisionCheck(bullet, enemy.cords)
+        //       if (collision) {
+        //         console.log('Trafiony!')
+        //       }
+        //     }
+        //   }
+        // }
       },
       complete(anim) {
         if (anim.completed) {
@@ -33,6 +36,20 @@ const Bullets = (props) => {
       }
     })
   }, [])
+
+  useEffect(() => {
+    const bullet = element.current.getBoundingClientRect()
+    if (store.state.enemies.length > 0) {
+      for (let enemy of store.state.enemies) {
+        if (enemy.cords !== null) {
+          const collision = collisionCheck(bullet, enemy.cords)
+          if (collision) {
+            console.log('Trafiony!')
+          }
+        }
+      }
+    }
+  }, [store.state.enemies])
 
   const style = {
     left: props.x + 'px',

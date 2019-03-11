@@ -136,6 +136,23 @@ export const reducer = (state, action) => {
         ]
       }
     }
+    case actionTypes.ENEMY_CORDS: {
+      const updatedArr = state.enemies.map(enemy => {
+        if (enemy.id === action.payload.id) {
+          return {
+            ...enemy,
+            cords: action.payload.cords
+          }
+        }
+        else return enemy
+      })
+      return {
+        ...state,
+        enemies: [
+          ...updatedArr
+        ]
+      }
+    }
     default: return state
   }
 }
