@@ -153,6 +153,15 @@ export const reducer = (state, action) => {
         ]
       }
     }
+    case actionTypes.PLAYER_ADD_POINTS: {
+      return {
+        ...state,
+        player: {
+          ...state.player,
+          score: state.player.score + action.payload
+        }
+      }
+    }
     default: return state
   }
 }

@@ -40,6 +40,8 @@ const Enemies = () => {
 
       const payload = {
         id: generateID(),
+        hp: 1,
+        value: 1,
         type: 'asteroid',
         style: style,
         x: x,

@@ -98,7 +98,7 @@ const Game = (props) => {
             y={bullet.position.y}
           />
         )}
-        <Battleship 
+        <Battleship
           color={store.state.player.selectedShip}
           animationTime = {starting ? 900 : 0}
           flyingLeft = {flyingLeft}

@@ -18,12 +18,14 @@ const Asteroid = (props) => {
         duration: 5000,
         easing: 'linear',
         change() {
-          const rect = element.current.getBoundingClientRect()
-          const payload = {
-            cords: rect,
-            id: props.id
+          if (element.current !== null) {
+            const rect = element.current.getBoundingClientRect()
+            const payload = {
+              cords: rect,
+              id: props.id
+            }
+            store.dispatch({type: actionTypes.ENEMY_CORDS, payload})
           }
-          store.dispatch({type: actionTypes.ENEMY_CORDS, payload})
         },
         complete(anim) {
           if(anim.completed) {

@@ -16,19 +16,6 @@ const Bullets = (props) => {
       translateY: -store.state.game.arenaHeight + (store.state.game.arenaHeight - props.y) - 28,
       duration: 1500,
       easing: 'linear',
-      change() {
-        // if (store.state.enemies.length > 0) {
-        //   for (let enemy of store.state.enemies) {
-        //     if (enemy.cords !== null) {
-        //       const bullet = element.current.getBoundingClientRect()
-        //       const collision = collisionCheck(bullet, enemy.cords)
-        //       if (collision) {
-        //         console.log('Trafiony!')
-        //       }
-        //     }
-        //   }
-        // }
-      },
       complete(anim) {
         if (anim.completed) {
           store.dispatch({type: actionTypes.BULLET_REMOVE, id: props.id})
@@ -44,7 +31,9 @@ const Bullets = (props) => {
         if (enemy.cords !== null) {
           const collision = collisionCheck(bullet, enemy.cords)
           if (collision) {
-            console.log('Trafiony!')
+            store.dispatch({type: actionTypes.BULLET_REMOVE, id: props.id})
+            store.dispatch({type: actionTypes.ENEMY_REMOVE, id: enemy.id})
+            store.dispatch({type: actionTypes.PLAYER_ADD_POINTS, payload: enemy.value})
           }
         }
       }
