@@ -3,6 +3,7 @@ import { StateContext } from '../../store/store'
 import Battleship from '../../components/Battleship/Battleship'
 import Bullets from '../../components/Bullets/Bullets'
 import Enemies from '../Enemies/Enemies'
+import Gameover from '../../components/Gameover/Gameover'
 import generateID from '../../utility/generateID'
 import * as actionTypes from '../../store/actionTypes'
 
@@ -75,10 +76,11 @@ const Game = (props) => {
       }
       store.dispatch({type: actionTypes.BULLET_CREATE, payload})
     }
-
-    window.addEventListener('keydown', handleMove)
-    window.addEventListener('keyup', handleStop)
-    window.addEventListener('click', handleShoot)
+    if (!store.state.game.gameOver) {
+      window.addEventListener('keydown', handleMove)
+      window.addEventListener('keyup', handleStop)
+      window.addEventListener('click', handleShoot)
+    }
     return () => {
       window.removeEventListener('keydown', handleMove)
       window.removeEventListener('keyup', handleStop)
@@ -86,8 +88,15 @@ const Game = (props) => {
     }
   }, [flyingLeft, flyingRight, store])
 
+  let gameOver = null
+
+  if (store.state.game.gameOver) {
+    gameOver = <Gameover />
+  }
+
   return (
       <React.Fragment>
+        {gameOver}
         <Enemies />
         {store.state.game.playerBullets.map((bullet) => 
           <Bullets 
