@@ -33,7 +33,7 @@ const Game = (props) => {
       store.dispatch({type: actionTypes.INIT_GAME, payload})
     }
     setTimeout(() => setStarting(false), 1200)
-  }, [])
+  }, [store.state.game.isStarted])
 
 
   useEffect(() => {
@@ -81,6 +81,10 @@ const Game = (props) => {
       window.addEventListener('keyup', handleStop)
       window.addEventListener('click', handleShoot)
     }
+    if (store.state.game.gameOver) {
+      setFlyingRight(false)
+      setFlyingLeft(false)
+    }
     return () => {
       window.removeEventListener('keydown', handleMove)
       window.removeEventListener('keyup', handleStop)
@@ -91,7 +95,7 @@ const Game = (props) => {
   let gameOver = null
 
   if (store.state.game.gameOver) {
-    gameOver = <Gameover />
+    gameOver = <Gameover score={store.state.player.score} />
   }
 
   return (

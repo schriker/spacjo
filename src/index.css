@@ -35,13 +35,12 @@ img {
   height: auto;
 }
 
-x
 form {
   width: 300px;
   max-width: 100%;
   min-width: 0;
   display: flex;
-  flex: 1 0 auto;
+  flex: 0 0 auto;
   flex-direction: column;
   align-items: center;
 }
@@ -141,22 +140,37 @@ button:active::after {
   right: 0;
 }
 
+button,
 button[type="submit"] {
   border: 0;
   background-color: #44b86a;
 }
 
+button::after,
 button[type="submit"]::after {
   background-color: #c0eecf;
 }
 
+button::before,
 button[type="submit"]::before {
   background-color: #1e7440;
 }
 
+.red-btn {
+  border: 0;
+  background-color: #cc402e;
+}
+
+.red-btn::after {
+  background-color: #d58877;
+}
+
+.red-btn::before {
+  background-color: #80261a;
+}
+
 .container {
   height: 100%;
-  padding: 0 30px;
 }
 
 /* Animation For Bg */

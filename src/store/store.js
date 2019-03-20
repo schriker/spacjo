@@ -3,7 +3,7 @@ import * as actionTypes from './actionTypes'
 
 export const initialState = {
   player: {
-    lives: 4,
+    lives: 1,
     score: 0,
     gun: 'laser',
     userName: 'Player name',
@@ -48,6 +48,39 @@ export const reducer = (state, action) => {
         game: {
           ...state.game,
           gameOver: true
+        }
+      }
+    }
+    case actionTypes.RESET_GAME: {
+      return {
+        ...initialState,
+        player: {
+          ...initialState.player,
+          userName: state.player.userName
+        },
+        game: {
+          ...initialState.game,
+          isStarted: true,          
+          arenaHeight: state.game.arenaHeight,
+          arenaWidth: state.game.arenaWidth,
+          playerPosition: {
+            ...initialState.game.playerPosition,
+            x: (state.game.arenaWidth / 2) - 32,
+            y: state.game.arenaHeight - 120
+          }
+        }
+      }
+    }
+    case actionTypes.MAIN_MENU: {
+      return {
+        ...state,
+        game: {
+          ...state.game,
+          isStarted: false,
+          gameOver: false,
+          playerPosition: {
+            ...initialState.game.playerPosition
+          }
         }
       }
     }
