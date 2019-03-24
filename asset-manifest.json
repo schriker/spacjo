@@ -1,0 +1,17 @@
+{
+  "main.css": "/spacjo/static/css/main.2fffe902.chunk.css",
+  "main.js": "/spacjo/static/js/main.c2f3a5a7.chunk.js",
+  "main.js.map": "/spacjo/static/js/main.c2f3a5a7.chunk.js.map",
+  "runtime~main.js": "/spacjo/static/js/runtime~main.c8c5a093.js",
+  "runtime~main.js.map": "/spacjo/static/js/runtime~main.c8c5a093.js.map",
+  "static/js/2.89b4f4b8.chunk.js": "/spacjo/static/js/2.89b4f4b8.chunk.js",
+  "static/js/2.89b4f4b8.chunk.js.map": "/spacjo/static/js/2.89b4f4b8.chunk.js.map",
+  "index.html": "/spacjo/index.html",
+  "precache-manifest.ffb7d64cc632a988177c81e5d0f47892.js": "/spacjo/precache-manifest.ffb7d64cc632a988177c81e5d0f47892.js",
+  "service-worker.js": "/spacjo/service-worker.js",
+  "static/css/main.2fffe902.chunk.css.map": "/spacjo/static/css/main.2fffe902.chunk.css.map",
+  "static/media/Battleship.module.css": "/spacjo/static/media/battleship_red.ae65df04.png",
+  "static/media/index.css": "/spacjo/static/media/bg.8d66e0ed.jpg",
+  "static/media/logo.png": "/spacjo/static/media/logo.843abc67.png",
+  "static/media/Start.module.css": "/spacjo/static/media/platform.f2458ac9.png"
+}
