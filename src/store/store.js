@@ -3,7 +3,7 @@ import * as actionTypes from './actionTypes'
 
 export const initialState = {
   player: {
-    lives: 1,
+    lives: 3,
     score: 0,
     gun: 'laser',
     userName: 'Player name',
