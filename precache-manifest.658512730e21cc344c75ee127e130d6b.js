@@ -24,19 +24,19 @@ self.__precacheManifest = [
     "url": "/spacjo/static/js/runtime~main.c8c5a093.js"
   },
   {
-    "revision": "c2f3a5a72c420747567d",
-    "url": "/spacjo/static/js/main.c2f3a5a7.chunk.js"
+    "revision": "5a90635c6feafc921562",
+    "url": "/spacjo/static/js/main.5a90635c.chunk.js"
   },
   {
     "revision": "89b4f4b8116fc8fe487f",
     "url": "/spacjo/static/js/2.89b4f4b8.chunk.js"
   },
   {
-    "revision": "c2f3a5a72c420747567d",
+    "revision": "5a90635c6feafc921562",
     "url": "/spacjo/static/css/main.2fffe902.chunk.css"
   },
   {
-    "revision": "081d1d720e416c20e2c7a836a718e1f0",
+    "revision": "e47a78f992680a65135cdf5281252533",
     "url": "/spacjo/index.html"
   }
 ];
